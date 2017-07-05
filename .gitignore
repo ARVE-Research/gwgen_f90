@@ -1,0 +1,6 @@
+# Fortran
+*.mod
+*.o
+
+# executable
+weathergen
