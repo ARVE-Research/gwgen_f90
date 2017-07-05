@@ -2,8 +2,15 @@ GWGEN_F90: The FORTRAN code base for a global weather generator
 ===============================================================
 
 Welcome! This repository contains the code base for the **G**lobal **W**eather
-**Gen**erator. This files can be used to run the weather generator.
+**Gen**erator. This files can be used to run the weather generator. For the
+full documentation, including the parameterization script, please refer to the
+GWGEN_ repository and it's documentation_.
 
+.. _GWGEN: https://github.com/ARVE-Research/gwgen
+.. _documentation: https://arve-research.github.io/gwgen/
+
+Installation
+------------
 To compile the software, you need a FORTRAN 95 compiler, e.g. via::
 
     sudo apt-get install gfortran
