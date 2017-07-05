@@ -15,7 +15,7 @@ To compile the software, you need a FORTRAN 95 compiler, e.g. via::
 
     sudo apt-get install gfortran
 
-on debian, or
+on debian, or::
 
     brew install gcc
 
