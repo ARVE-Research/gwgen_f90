@@ -119,8 +119,8 @@ module weathergenmod
     real(sp) :: tmin_d2 = 1.020964        ! slope of best line fit of tmin on dry days (see :f:subr:`meansd`)
     real(sp), dimension(3) :: tmin_sd_breaks = (/ -40., 0.0, 25. /)  ! breaks of tmin sd correlation
     ! polynomial coefficients for correlating tmin sd on wet days
+    !   < -40       -40 - 0     0 - 25        > 25
     real(sp), dimension(4, 6) :: tmin_sd_w = reshape((/ &
-        !   < -40       -40 - 0     0 - 25        > 25
         9.72715668, 3.05498827, 3.21874237,  0.55707042, &
         0.1010504, -0.21158825, -0.04507634, 0.02443123, &
         0.0,       0.01374948,  0.02094482,  0.0, &
@@ -129,8 +129,8 @@ module weathergenmod
         0.0,       3.2e-07,     -1.13e-06,   0.0  &
         /), (/ 4, 6 /))
     ! polynomial coefficients for correlating tmin sd on dry days
+    !   < -40        -40 - 0      0 - 25       > 25
     real(sp), dimension(4, 6) :: tmin_sd_d = reshape((/ &
-        !   < -40       -40 - 0     0 - 25        > 25
         10.89900605, 3.56755661,  3.79411755,  -4.61943457, &
         0.12709893, -0.11544588,  0.03298697,  0.22605603, &
         0.0,         0.02824401, -0.01504554,  0.0, &
@@ -153,8 +153,8 @@ module weathergenmod
     real(sp) :: tmax_d2 = 1.0061          ! slope of best line fit of tmax on dry days (see :f:subr:`meansd`)
     real(sp), dimension(3) :: tmax_sd_breaks = (/ -30., 0.0, 35. /)  ! polynomial coefficients for the breaks of tmax sd correlation
     ! polynomial coefficients for correlating tmax sd on wet days
+    !   < -30       -30 - 0       0 - 35       > 35
     real(sp), dimension(4, 6) :: tmax_sd_w = reshape((/ &
-        !   < -30       -30 - 0     0 - 35        > 35
         6.67200351,  3.86010858,  3.79193207,  5.55292835, &
         0.03643908, -0.21861197, -0.03126021, -0.09734715, &
         0.0,         0.00388465,  0.01611473,  0.0, &
@@ -163,8 +163,8 @@ module weathergenmod
         0.0,         7.4e-07,    -2.4e-07,     0.0 &
         /), (/ 4, 6 /))
     ! polynomial coefficients for correlating tmax sd on dry days
+    !   < -30       -30 - 0       0 - 35       > 35
     real(sp), dimension(4, 6) :: tmax_sd_d = reshape((/ &
-        !   < -30       -30 - 0     0 - 35        > 35
         7.37455165,  4.61701866,  4.74550991,  3.25541815, &
         0.01535526, -0.33872824, -0.07609816, -0.02178605, &
         0.0,        -0.0187566,   0.01893058,  0.0, &
@@ -204,7 +204,7 @@ module weathergenmod
     ! min. and max range for bias correction (1st and 99th percentile)
     real(sp) :: wind_bias_min = -2.3263478740, wind_bias_max = 2.3263478740 ! min. and max range for bias correction
     ! parameters for the exponential intercept correction
-    real(sp) :: wind_intercept_bias_a = 1.1582245720322826.  ! slope in the exponent
+    real(sp) :: wind_intercept_bias_a = 1.1582245720322826  ! slope in the exponent
     real(sp) :: wind_intercept_bias_b = -1.3358916953022832  ! intercept in the exponent
     ! parameters of the slope - unorm best fit line
     ! coefficients for the bias correction of wind speed
