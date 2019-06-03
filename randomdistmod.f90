@@ -214,6 +214,23 @@ module randomdistmod
 
         !---------------------
 
+        do
+
+            u(1) = ranu(state)
+            u(2) = ranu(state)
+
+            v = real(u) * rng2   !convert integer (-huge,+huge) to (-1,+1)
+
+            s = sum(v**2)
+
+            if (s < 1.) exit
+
+        end do
+
+            a = sqrt(-2. * log(s) / s)
+
+            vals = v * a
+
         if (state%have) then
 
             state%have = .false.
@@ -221,25 +238,7 @@ module randomdistmod
 
         else
 
-            do
-
-                u(1) = ranu(state)
-                u(2) = ranu(state)
-
-                v = real(u) * rng2   !convert integer (-huge,+huge) to (-1,+1)
-
-                s = sum(v**2)
-
-                if (s < 1.) exit
-
-            end do
-
-            a = sqrt(-2. * log(s) / s)
-
-            vals = v * a
-
             nval = vals(1)
-
             state%have = .true.
 
         end if
